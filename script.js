@@ -48,7 +48,7 @@ document.querySelectorAll(".btn-comprar").forEach((button) => {
         const productName = button.parentElement.querySelector("h3").innerText;
         const productPrice = parseFloat(button.parentElement.querySelector("p").innerText.replace("$", ""));
         const productQuantity = parseInt(button.parentElement.querySelector(".cantidad-producto").value);
-
+        window.alert(productQuantity);
         const product = { id: productId, name: productName, price: productPrice, quantity: productQuantity };
         añadirAlCarrito(product);
     });
