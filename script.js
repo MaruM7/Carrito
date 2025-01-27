@@ -16,7 +16,9 @@ if (carrito.length > 0) {
         `;
         carritoResumen.appendChild(li);
         total += item.price * item.quantity;
-        window.alert(item.quantity);
+        if (item.quantity>20) {
+            item.quantity=20; 
+        }
     });
 }
 
