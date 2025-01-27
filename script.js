@@ -16,7 +16,6 @@ if (carrito.length > 0) {
         `;
         carritoResumen.appendChild(li);
         total += item.price * item.quantity;
-        window.alert("maricones");
     });
 }
 
@@ -130,7 +129,7 @@ function filterProduct(){
     if('guantes'.includes(busqueda)){
         container.innerHTML+=guantes.outerHTML;
     }
-    if('espinilleras'.includes(bucal)){
+    if('bucal'.includes(bucal)){
         container.innerHTML+=bucal.outerHTML;
     }
 
