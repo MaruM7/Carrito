@@ -16,6 +16,7 @@ if (carrito.length > 0) {
         `;
         carritoResumen.appendChild(li);
         total += item.price * item.quantity;
+        window.alert("maricones");
     });
 }
 
@@ -51,11 +52,6 @@ document.querySelectorAll(".btn-comprar").forEach((button) => {
         window.alert(productQuantity);
         const product = { id: productId, name: productName, price: productPrice, quantity: productQuantity };
         añadirAlCarrito(product);
-        if (productQuantity>20) {
-            window.alert("MARICONES");
-        } else {
-            
-        }
     });
 });
 
