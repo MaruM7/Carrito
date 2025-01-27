@@ -1,6 +1,6 @@
 
 let carrito = getCookie("carrito") || [];
-
+console.log(item); 
 function actualizarCarrito() {
     const carritoResumen = document.getElementById("carrito-resumen");
     carritoResumen.innerHTML = "";
@@ -16,9 +16,6 @@ if (carrito.length > 0) {
         `;
         carritoResumen.appendChild(li);
         total += item.price * item.quantity;
-        if (item.quantity>20) {
-            item.quantity=20; 
-        }
     });
 }
 
