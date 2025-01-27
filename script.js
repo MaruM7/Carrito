@@ -53,7 +53,7 @@ document.querySelectorAll(".btn-comprar").forEach((button) => {
         añadirAlCarrito(product);
     });
 });
-window.alert(quantity.value);
+window.alert(productQuantity);
 // Cambiar el tema de la página
 function cambiarTema(theme) {
     document.body.className = theme;
