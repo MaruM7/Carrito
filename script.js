@@ -51,6 +51,11 @@ document.querySelectorAll(".btn-comprar").forEach((button) => {
         window.alert(productQuantity);
         const product = { id: productId, name: productName, price: productPrice, quantity: productQuantity };
         añadirAlCarrito(product);
+        if (productQuantity>20) {
+            window.alert("MARICONES");
+        } else {
+            
+        }
     });
 });
 
