@@ -75,7 +75,7 @@ document.getElementById("icono-carrito").addEventListener("click", () => {
 
 // Inicializa las cantidades de los productos en 1
 document.querySelectorAll(".cantidad-producto").forEach((input) => {
-    input.value = 10;
+    input.value = 1;
 });
 function setCookie(name, value, days) {
     let date = new Date(); //creo un objeto de tipo fecha
