@@ -1,7 +1,6 @@
 
 let carrito = getCookie("carrito") || [];
 
-// Actualiza el carrito en el DOM
 function actualizarCarrito() {
     const carritoResumen = document.getElementById("carrito-resumen");
     carritoResumen.innerHTML = "";
@@ -76,7 +75,7 @@ document.getElementById("icono-carrito").addEventListener("click", () => {
 
 // Inicializa las cantidades de los productos en 1
 document.querySelectorAll(".cantidad-producto").forEach((input) => {
-    input.value = 1;
+    input.value = 10;
 });
 function setCookie(name, value, days) {
     let date = new Date(); //creo un objeto de tipo fecha
