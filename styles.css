@@ -140,6 +140,7 @@ header nav ul li a {
 .productos h2 {
     text-align: center;
     margin-bottom: 0.5rem;
+    color: #000;
 }
 
 .productos-container {
