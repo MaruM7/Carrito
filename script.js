@@ -9,6 +9,8 @@ let stockProductos = {
 console.log(stockProductos)
 let carrito = getCookie("carrito") || [];
 
+
+stockProductos.guantes.va
 function actualizarCarrito() {
     const carritoResumen = document.getElementById("carrito-resumen");
     carritoResumen.innerHTML = "";
