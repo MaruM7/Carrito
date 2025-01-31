@@ -6,6 +6,7 @@ let stockProductos = {
     espinilleras: 20,
     casco: 20
 };
+console.log(stockProductos)
 let carrito = getCookie("carrito") || [];
 
 function actualizarCarrito() {
@@ -23,7 +24,7 @@ function actualizarCarrito() {
                 <button onclick="eliminarProducto('${item.id}')">Eliminar</button>
             `;
             carritoResumen.appendChild(li);
-            total += item.price * item.quantity;
+            subtotal += item.price * item.quantity;
         });
     }
 
