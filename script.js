@@ -41,7 +41,7 @@ function añadirAlCarrito(producto) {
     let totalPedido = cantidadEnCarrito + producto.quantity;
 
     // Verificamos si hay suficiente stock
-    if (totalPedido > stockProductos[producto.id]) {
+    if (totalPedido => stockProductos[producto.id]) {
         alert(`No hay suficiente stock de ${producto.name}. Puedes agregar hasta ${stockProductos[producto.id] - cantidadEnCarrito} unidades.`);
         return;
     }
