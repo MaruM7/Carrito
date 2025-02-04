@@ -45,7 +45,7 @@ function añadirAlCarrito(producto) {
     let totalPedido = cantidadEnCarrito + producto.quantity;
 
     // Verificamos si hay suficiente stock
-    if (totalPedido => stockProductos[producto.id]) {
+    if (totalPedido > stockProductos[producto.id]) {
         alert(`No hay suficiente stock de ${producto.name}. Puedes agregar hasta ${stockProductos[producto.id] - cantidadEnCarrito} unidades.`);
         return;
     }
@@ -162,10 +162,9 @@ function getCookie(cname) {
 }
 const productos2 = document.querySelectorAll(".producto");
 
-// Add events to each product
 productos2.forEach((producto) => {
     producto.addEventListener("mouseover", () => {
-        producto.style.border = "2px solid red";
+        producto.style.border = "2px solid blue";
         producto.style.transform = "scale(1.05)";
     });
 
