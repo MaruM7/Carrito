@@ -27,6 +27,7 @@ function actualizarCarrito() {
             `;
             carritoResumen.appendChild(li);
             subtotal += item.price * item.quantity;
+            total+= subtotal - valorguardado; 
         });
     }
 
