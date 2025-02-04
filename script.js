@@ -160,5 +160,18 @@ function getCookie(cname) {
     }
     return "";
 }
+const productos2 = document.querySelectorAll(".producto");
 
+// Add events to each product
+productos2.forEach((producto) => {
+    producto.addEventListener("mouseover", () => {
+        producto.style.border = "2px solid red";
+        producto.style.transform = "scale(1.05)";
+    });
+
+    producto.addEventListener("mouseout", () => {
+        producto.style.border = "1px solid #ccc";
+        producto.style.transform = "scale(1)";
+    });
+});
 actualizarCarrito();
