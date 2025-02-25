@@ -32,8 +32,9 @@
                 </ul>
                 <p id="subtotal">Subtotal: $0.00</p>
                 <p id="total">Total: $0.00</p>
-                <input type="text" id="descuentoinput" placeholder="Introduce codigo">
-                <button onclick="descuentoproducto()" type="button">Aplicar</button>
+                <input type="text" id="codigo-descuento" placeholder="Ingresa el código de descuento">
+                <button id="aplicar-descuento" onclick="aplicarDescuento()">Aplicar Descuento</button>
+                <p id="mensaje-descuento"></p>
                 <button id="finalizar-compra">Finalizar Compra</button>
                 <button id="vaciar-carrito">Vaciar Carrito</button>
             </div>

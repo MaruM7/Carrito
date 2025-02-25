@@ -16,7 +16,6 @@ let valordescuento=0;
 console.log(stockProductos)
 
 function actualizarCarrito() {
-
     const carritoResumen = document.getElementById("carrito-resumen");
     carritoResumen.innerHTML = "";
     let total = 0;
@@ -33,16 +32,16 @@ function actualizarCarrito() {
             `;
             carritoResumen.appendChild(li);
             subtotal += item.price * item.quantity;
-            alert(subtotal);
-            total+= subtotal - valordescuento; 
         });
     }
-    alert(subtotal);
-    let a=document.querySelector("#subtotal");
-    a.innerHTML= `Subtotal: $${subtotal.toFixed(2)}`;
+
+    total = subtotal.toFixed(2) - valordescuento; // Aplica el descuento aquí
+    let a = document.querySelector("#subtotal");
+    a.innerHTML = `Subtotal: $${subtotal.toFixed(2)}`;
     document.getElementById("total").innerHTML = `Total: $${total.toFixed(2)}`;
     setCookie("carrito", carrito, 30);
 }
+
 
 function añadirAlCarrito(producto) {
     let existente = carrito.find((item) => item.id === producto.id);
@@ -225,3 +224,21 @@ productos2.forEach((producto) => {
             document.querySelector('dialog').close();
         });
     };
+    function aplicarDescuento() {
+        const codigoDescuento = document.getElementById("codigo-descuento").value;
+        const mensajeDescuento = document.getElementById("mensaje-descuento"); 
+        const descuento = descuentos[codigoDescuento];
+    
+        if (descuento) {
+            valordescuento = (subtotal * descuento) / 100; 
+            mensajeDescuento.textContent = `Descuento del ${descuento}% aplicado.`;
+            mensajeDescuento.style.color = "green";
+        } else {
+            valordescuento = 0; 
+            mensajeDescuento.textContent = "Código de descuento inválido.";
+            mensajeDescuento.style.color = "red";
+        }
+    
+        actualizarCarrito();
+    }
+    
