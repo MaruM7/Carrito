@@ -6,15 +6,21 @@ let stockProductos = {
     espinilleras: 20,
     casco: 20
 };
+let descuentos = {
+    a10: 10,
+    b25: 25,
+    c15: 15,
+    d5: 5,
+};
+let valordescuento=0;
 console.log(stockProductos)
-let carrito = getCookie("carrito") || [];
 
-
-stockProductos.guantes.va
 function actualizarCarrito() {
+
     const carritoResumen = document.getElementById("carrito-resumen");
     carritoResumen.innerHTML = "";
     let total = 0;
+    let subtotal = 0;
 
     if (carrito.length > 0) {
         carrito.forEach((item) => {
@@ -27,11 +33,14 @@ function actualizarCarrito() {
             `;
             carritoResumen.appendChild(li);
             subtotal += item.price * item.quantity;
-            total+= subtotal - valorguardado; 
+            alert(subtotal);
+            total+= subtotal - valordescuento; 
         });
     }
-
-    document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
+    alert(subtotal);
+    let a=document.querySelector("#subtotal");
+    a.innerHTML= `Subtotal: $${subtotal.toFixed(2)}`;
+    document.getElementById("total").innerHTML = `Total: $${total.toFixed(2)}`;
     setCookie("carrito", carrito, 30);
 }
 
@@ -173,4 +182,46 @@ productos2.forEach((producto) => {
         producto.style.transform = "scale(1)";
     });
 });
-actualizarCarrito();
+
+
+
+
+    async function login() {
+        const usuario = document.getElementById("username").value;
+        const contraseña = document.getElementById("password").value;
+        const mensaje = document.getElementById("loginMensaje");
+    
+    
+        try {
+            const respuesta = await fetch("http://localhost:3000/usuarios");
+            const datos = await respuesta.json();
+            console.log(respuesta); //Vemos que tiene dentro respuesta
+            console.log(datos);
+    
+    
+            if (usuario === datos.nombre && contraseña === datos.contraseña) {
+                mensaje.style.color = "green";
+                mensaje.textContent = "Acceso concedido";
+            } else {
+                mensaje.style.color = "red";
+                mensaje.textContent = "Usuario o contraseña incorrectos";
+            }
+        } catch (error) {
+            console.log(error);
+            mensaje.style.color = "red";
+            mensaje.textContent = "Error al conectar con el servidor";
+        }
+    }
+    
+    //Debéis actualizar el método onload
+    window.onload = function() {
+        carrito = getCookie("carrito") || [];
+        actualizarCarrito();
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            document.querySelector('dialog').showModal();
+        });
+       
+        document.querySelector(".close").addEventListener("click", function() {
+            document.querySelector('dialog').close();
+        });
+    };

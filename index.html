@@ -20,6 +20,7 @@
         <div class="search-bar-container">
             <input type="text" id="search-input" placeholder="Buscar...">
             <button onclick="filterProduct()" type="button">Buscar</button>
+            <button id="loginBtn">Login</button>
         </div>
         <div class="carrito">
             <a href="#" id="icono-carrito">
@@ -29,9 +30,9 @@
                 <h3>Tu Carrito</h3>
                 <ul id="carrito-resumen">
                 </ul>
-                <p id="subtotal">Total: $0.00</p>
+                <p id="subtotal">Subtotal: $0.00</p>
                 <p id="total">Total: $0.00</p>
-                <input type="text" id="descuento-input" placeholder="Introduce codigo">
+                <input type="text" id="descuentoinput" placeholder="Introduce codigo">
                 <button onclick="descuentoproducto()" type="button">Aplicar</button>
                 <button id="finalizar-compra">Finalizar Compra</button>
                 <button id="vaciar-carrito">Vaciar Carrito</button>
@@ -91,6 +92,15 @@
             <button onclick="cambiarTema('theme-light')">Tema Claro</button>
             <button onclick="cambiarTema('theme-dark')">Tema Oscuro</button>
         </section>
+        <dialog id="login-dialog">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Ingresar</button>
+            <p id="loginMensaje"></p>
+        </dialog>
+    
     </main>
 
     <footer>
